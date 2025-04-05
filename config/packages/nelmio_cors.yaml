@@ -1,0 +1,11 @@
+nelmio_cors:
+    defaults:
+        allow_origin: ['http://localhost:4200'] # Allow requests from all domains. Replace with 'http://localhost:4200' for specific domains.
+        allow_headers: ['Content-Type', 'Authorization']
+        allow_methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+        max_age: 3600
+    paths:
+        '^/products': # Apply rules to all `/products` endpoints
+            allow_origin: ['*']
+            allow_headers: ['Content-Type', 'Authorization']
+            allow_methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
